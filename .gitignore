@@ -33,6 +33,7 @@ man/
 .deps
 .libs
 *.pc
+*.DS_Store
 *.tar.gz
 src/config.h
 src/config.h.in

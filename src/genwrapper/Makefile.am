@@ -1,4 +1,5 @@
-AM_CXXFLAGS = -I$(top_srcdir)/include
+AM_CXXFLAGS = -I$(top_srcdir)/include $(OPENTHREADS_CFLAGS)
+AM_LIBS = $(OPENTHREADS_LIBS)
 LDADD = $(top_builddir)/src/cppintrospection/libcppintrospection-@CPPINTROSPECTION_API_VERSION@.la
 
 # this lists the binaries to produce, the (non-PHONY, binary) targets in
@@ -30,6 +31,6 @@ genwrapper_SOURCES = \
     main.cpp \
     XML_parser.h
 
-genwrapper_CPPFLAGS = $(XML_CFLAGS) $(BOOST_CPPFLAGS)
-genwrapper_LDFLAGS = $(XML_LIBS) $(BOOST_LDFLAGS) $(BOOST_REGEX_LIB)
+genwrapper_CPPFLAGS = $(XML_CFLAGS) $(BOOST_CPPFLAGS) $(OPENTHREADS_CFLAGS)
+genwrapper_LDFLAGS = $(XML_LIBS) $(BOOST_LDFLAGS) $(BOOST_REGEX_LIB) $(OPENTHREADS_LIBS)
 

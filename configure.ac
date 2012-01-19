@@ -87,6 +87,18 @@ PKG_CHECK_MODULES(OSG, openscenegraph >= 2.8.0, , AC_MSG_ERROR([missing OpenScen
 #AC_CHECK_FRAMEWORK(osg, [#include <osg/Version>])
 #AC_CHECK_FRAMEWORK(OpenThreads, [#include <OpenThreads/Version>])
 
+AC_ARG_WITH(frameworks, AS_HELP_STRING([--with-frameworks], [Enables compilation against OSG frameworks (instead of .dylibs)]))
+    
+if test "$with_frameworks" == yes
+then
+    AC_MSG_NOTICE([Building against OSG frameworks $with-frameworks])
+    OPENTHREADS_CFLAGS="-I/usr/local/lib/OpenThreads.framework/Headers"
+    OPENTHREADS_LIBS="-F/usr/local/lib -framework OpenThreads"
+fi
+AC_MSG_NOTICE([OPENTHREADS_CFLAGS:  ${OPENTHREADS_CFLAGS}])
+AC_MSG_NOTICE([OPENTHREADS_LIBS:    ${OPENTHREADS_LIBS}])
+
+
 # GNU help2man creates man pages from --help output; in many cases, this
 # is sufficient, and obviates the need to maintain man pages separately.
 # However, this means invoking executables, which we generally cannot do
