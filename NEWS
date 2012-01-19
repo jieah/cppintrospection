@@ -9,7 +9,7 @@ Bug fixes:
     * (none)
 
 New features:
-    * (none)
+    * Ability to link against OpenThreads framework on OSX
 
 
 2011-04-28 cppintrospection 3.0.0
