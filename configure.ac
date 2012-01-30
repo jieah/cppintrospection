@@ -124,12 +124,22 @@ case "$host" in *-darwin* | *-macos10*)
     CPPFLAGS="$CPPFLAGS -I/sw/include"
     LDFLAGS="$LDFLAGS -L/sw/lib"
   fi
-  ;;
   # OSX does not include /usr/local/lib/pkgconfig path, so we export it here
   # (for everyone, just in case)
   # PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
   # export PKG_CONFIG_PATH
   # LDFLAGS="$LDFLAGS -L/usr/local/lib -L/usr/local/lib64"
+
+  AC_ARG_ENABLE([universal],
+                AS_HELP_STRING([--enable-universal], [Enables a universal i386 / x86_64 build on OSX]),
+                [universal_build=$enableval],
+                [universal_build=no])
+  if test "x$universal_build" = xyes; then
+      AC_MSG_NOTICE([Making UNIVERSAL build (32/64 bit) for OSX])
+      CXXFLAGS+=" -arch i386 -arch x86_64"
+      LDFLAGS+=" -arch i386 -arch x86_64"
+  fi
+  ;;
 esac
 
 CXXFLAGS+=" -Wfatal-errors"
