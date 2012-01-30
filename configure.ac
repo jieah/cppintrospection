@@ -79,8 +79,12 @@ fi
 #TODO: check for boost::spirit
 
 PKG_CHECK_MODULES(OPENTHREADS, openthreads >= 2.4.0, , AC_MSG_ERROR([missing OpenThreads]))
+AC_SUBST([OPENTHREADS_LIBS])
+AC_SUBST([OPENTHREADS_CFLAGS])
 
 PKG_CHECK_MODULES(OSG, openscenegraph >= 2.8.0, , AC_MSG_ERROR([missing OpenSceneGraph]))
+AC_SUBST([OSG_LIBS])
+AC_SUBST([OSG_CFLAGS])
 
 # Mac OS X specific configure options
 #AC_ARG_WITH(osg_framework, [ --with-osg-framework=PREFIX Specify the prefix path to osg frameworks [default=standard framework paths]])
@@ -142,3 +146,4 @@ AC_CONFIG_FILES([
     ])
 
 AC_OUTPUT
+

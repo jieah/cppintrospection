@@ -31,6 +31,16 @@ genwrapper_SOURCES = \
     main.cpp \
     XML_parser.h
 
-genwrapper_CPPFLAGS = $(XML_CFLAGS) $(BOOST_CPPFLAGS) $(OPENTHREADS_CFLAGS)
-genwrapper_LDFLAGS = $(XML_LIBS) $(BOOST_LDFLAGS) $(BOOST_REGEX_LIB) $(OPENTHREADS_LIBS)
+genwrapper_CPPFLAGS = \
+    $(XML_CFLAGS) \
+    $(BOOST_CPPFLAGS) \
+    $(OSG_CFLAGS) \
+    $(OPENTHREADS_CFLAGS)
+
+genwrapper_LDFLAGS = \
+    $(XML_LIBS) \
+    $(BOOST_LDFLAGS) \
+    $(BOOST_REGEX_LIB) \
+    $(OSG_LIBS) \
+    $(OPENTHREADS_LIBS)
 
