@@ -60,7 +60,7 @@ Tested Doxygen version is 1.4.1. GenWrapper may not work with other versions.
 REPORTING BUGS
 --------------
 
-http://github.com/sat-metalab/cppintrospection
+http://code.sat.qc.ca/redmine/projects/cppintrospection/issues
 
 Note that the cppintrospection project is a friendly fork of osgIntrospection, which can be found at the following URL:
 http://www.openscenegraph.org/svn/osg/osgIntrospection/
@@ -86,5 +86,5 @@ COPYRIGHT
 CURRENT PROJECT URL
 -------------------
 
-http://github.com/sat-metalab/cppintrospection
+http://code.sat.qc.ca/redmine/projects/cppintrospection/
 
